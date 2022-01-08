@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.48.2'
+project:
+    name: utils
+    package:
+        name: utils
+        api_version: '52.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/utils/tests
+            options:
+                outputdir: robot/utils/results
+
+    robot_testdoc:
+        options:
+            path: robot/utils/tests
+            output: robot/utils/doc/utils_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
